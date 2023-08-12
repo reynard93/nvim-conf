@@ -3,8 +3,8 @@ return {
   -- solarized
   {
     "ishan9299/nvim-solarized-lua",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    -- priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "solarized",
@@ -41,7 +41,7 @@ return {
       })
 
       vim.g.solarized_termtrans = 1
-      vim.cmd("colorscheme solarized")
+      vim.cmd("colorscheme catppuccin")
     end,
   },
 
@@ -143,7 +143,8 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     keys = {
       { "<leader>cl", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Select Colorscheme with Preview" },
     },
@@ -151,6 +152,7 @@ return {
       require("catppuccin").setup({
         transparent_background = true,
       })
+      vim.cmd("colorscheme catppuccin")
     end,
   },
 

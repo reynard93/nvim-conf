@@ -18,19 +18,37 @@ return {
     disabled = false,
     to_register_wrap = function()
       return require("null-ls").builtins.formatting.prettierd.with({
-        condition = require("util").should_format_with_prettier,
-        -- filetypes = { "html", "css", "scss", "javascript", "vue", "typescript" },
-        -- extra_args = { "--print-width", "120" },
+        filetypes = {
+          "vue",
+          "javascript",
+          "typescript",
+        },
+        -- extra_args = {
+        --   "--config",
+        --   require("util").config_finder({
+        --     ".prettierrc",
+        --     "prettier.config.js",
+        --   }, default_config_dir),
+        -- },
       })
     end,
   },
   eslint_d = {
     name = "eslint_d",
+    disabled = false,
     to_register_wrap = function()
-      return require("null-ls").register(require("null-ls").builtins.formattting.eslint_d.with({
-        -- we only want this source to apply when prjt uses eslint
-        condition = require("util").is_eslint_project,
-      }))
+      return require("null-ls").builtins.formatting.eslint_d.with({
+        filetypes = {
+          "vue",
+          "javascript",
+          "typescript",
+        },
+        -- check
+        -- extra_args = {
+        --   "--config",
+        --   require("util").config_finder({ ".eslintrc.js", ".eslintrc.json" }, default_config_dir),
+        -- },
+      })
     end,
   },
   dprint = {
