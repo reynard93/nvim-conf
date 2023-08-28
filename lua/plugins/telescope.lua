@@ -199,7 +199,7 @@ return {
         desc = "Harpoon Add File",
       },
       {
-        "<C-j>",
+        "<C-h>",
         function()
           require("harpoon.ui").nav_file(1)
         end,
@@ -207,7 +207,7 @@ return {
         desc = "Harpoon Nav File 1",
       },
       {
-        "<C-k>",
+        "<C-j>",
         function()
           require("harpoon.ui").nav_file(2)
         end,
@@ -215,7 +215,7 @@ return {
         desc = "Harpoon Nav File 2",
       },
       {
-        "<C-l>",
+        "<C-k>",
         function()
           require("harpoon.ui").nav_file(3)
         end,
@@ -223,7 +223,7 @@ return {
         desc = "Harpoon Nav File 3",
       },
       {
-        "<C-h>",
+        "<C-l>",
         function()
           require("harpoon.ui").nav_file(4)
         end,
